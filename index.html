@@ -47,9 +47,9 @@ h3{font-size:18px;line-height:1.25;margin-bottom:10px}
 .hero-copy .intro{font-size:18px;color:var(--muted);max-width:500px;margin-bottom:27px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
 .hero-art{position:relative;min-height:390px;display:flex;align-items:center;justify-content:center}
-.hero-photo{width:100%;height:390px;border-radius:30px;object-fit:cover;background:linear-gradient(145deg,#ded9d1,#f0e4d4);box-shadow:0 18px 35px #75532b1a;display:grid;place-items:center;text-align:center;padding:24px;color:#7a6a59}
-.hero-photo .photo-symbol{font-size:72px;display:block;margin-bottom:10px}
-.hero-photo small{display:block;max-width:220px}
+.{width:100%;height:390px;border-radius:30px;object-fit:cover;background:linear-gradient(145deg,#ded9d1,#f0e4d4);box-shadow:0 18px 35px #75532b1a;display:grid;place-items:center;text-align:center;padding:24px;color:#7a6a59}
+. .photo-symbol{font-size:72px;display:block;margin-bottom:10px}
+. small{display:block;max-width:220px}
 .shape{position:absolute;pointer-events:none;opacity:.9}
 .shape.star{font-size:30px;color:#f3c98e}
 .shape.leaf{width:24px;height:36px;background:var(--green);border-radius:100% 0 100% 0;transform:rotate(-25deg)}
@@ -186,7 +186,7 @@ h3{font-size:18px;line-height:1.25;margin-bottom:10px}
    <div class="hero-actions"><a class="pill" href="#shop">Shop Now</a><a class="pill outline" href="#story">Our Story</a></div>
   </div>
   <div class="hero-art">
-    <div class="story-image" style="padding:0;overflow:hidden;"> <img src="images/Toddler.png" alt="Toddler enjoying playtime with a WunderCubs toy" style="width:100%;height:100%;object-fit:cover;"> </div>  
+    <img class="hero-photo" src="./images/Toddler.png" alt="Toddler enjoying playtime with a WunderCubs toy" >
     <span class="shape pebble" style="right:-12px;bottom:-12px;width:75px;height:75px;opacity:.55"></span>
   </div>
  </div>
