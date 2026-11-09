@@ -194,8 +194,9 @@ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/sv
 
 /* paisley texture */
 .paisley-bg{position:relative}
-.paisley-bg:before{content:"";position:absolute;inset:0;opacity:.065;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='110' viewBox='0 0 90 110'%3E%3Cpath d='M45 8c18 0 30 14 30 32 0 14-9 22-9 34 0 10 8 14 8 24 0 6-8 7-14 16-14 22-38 29-38 46z' fill='none' stroke='%23c4675a' stroke-width='2'/%3E%3C/svg%3E");background-size:90px 110px;background-repeat:repeat}
 .paisley-bg > *{position:relative;z-index:1}
+.paisley-bg::before{content:"";position:absolute;inset:0;opacity:.065;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='110' viewBox='0 0 90 110'%3E%3Cpath d='M45 8c18 0 30 14 30 32 0 14-9 22-9 34 0 10 8 14 8 24 0 8-7 14-16 14-22 0-38-20-8-46C20 32 27 8 45 8z' fill='none' stroke='%23c35a5' stroke-width='2'/%3E%3C/svg%3E");background-size:90px 110px;background-repeat:repeat}
+
 
 /* character trait chips */
 .trait-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
