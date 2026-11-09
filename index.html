@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WunderCubs - Toys Rooted in Wonder</title>
+<meta name="description" content="Screen-free, culturally rooted plush toys that bring India's living stories into little hands. Thoughtfully designed, heartfelt, and built for wonder.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+--cream:#faf5ef; --parchment:#f2e6d8; --parchment2:#e8d6c0;
+--ink:#1f3a3a; --muted:#73685d; --line:#e0d0b8;
+--terracotta:#c4675a; --terracotta-dark:#9c4a3f; --terracotta-light:#eac4ba;
+--marigold:#d19a3d; --marigold-light:#f2dfb0;
+--indigo:#173333; --indigo-light:#214848; --indigo-mist:#3a6060;
+--sage:#7f9271; --blush:#e4c9b8; --white:#fffaf4;
+--sans:'Figtree',ui-sans-serif,system-ui,-apple-system,sans-serif;
+--serif:'Fraunces',Georgia,serif;
+--shadow-soft:0 18px 40px -16px rgba(15,25,25,.25);
+--shadow-lift:0 26px 55px -20px rgba(15,25,25,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+img{max-width:100%;display:block}
+::selection{background:var(--marigold-light);color:var(--terracotta-dark)}
+h1,h2,h3,p,blockquote,figure{margin:0}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:600;letter-spacing:-.02em;line-height:1.08;color:var(--ink)}
+h1{font-size:clamp(44px,5.6vw,76px)}
+h2{font-size:clamp(32px,4vw,48px);font-weight:500;letter-spacing:-.03em}
+h3{font-size:19px;line-height:1.3}
+.muted{color:var(--muted)}
+.container{width:min(100% - 48px,1180px);margin:auto}
+section{position:relative;overflow:hidden}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta-dark);margin:0 0 16px}
+.eyebrow:before{content:"";width:18px;height:1px;background:var(--terracotta-dark)}
+
+/* grain overlay */
+.grain{position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.035;mix-blend-mode:multiply;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* decorative mandala rings (pure CSS) */
+.mandala{position:absolute;border-radius:50%;border:1.5px dashed currentColor;opacity:.3;pointer-events:none}
+.mandala:before{content:"";position:absolute;inset:14px;border-radius:50%;border:1px dotted currentColor;opacity:.7}
+.spin-slow{animation:spin 60s linear infinite}
+.float{animation:float 7s ease-in-out infinite}
+.float-delay{animation:float 7s ease-in-out infinite 1.4s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in-view{opacity:1;transform:translateY(0)}
+.reveal-stagger > *{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal-stagger.in-view > *{opacity:1;transform:translateY(0)}
+.reveal-stagger.in-view > *:nth-child(1){transition-delay:.05s}
+.reveal-stagger.in-view > *:nth-child(2){transition-delay:.15s}
+.reveal-stagger.in-view > *:nth-child(3){transition-delay:.25s}
+.reveal-stagger.in-view > *:nth-child(4){transition-delay:.35s}
+
+/* scalloped divider */
+.scallop{height:26px;width:100%}
+.scallop.to-parchment{background:var(--parchment);-webkit-mask-image:radial-gradient(circle at 13px 0,transparent 12px,#000 13px);mask-image:radial-gradient(circle at 13px 0,transparent 12px,#000 13px);-webkit-mask-size:26px 26px;mask-size:26px 26px;-webkit-mask-repeat:repeat-x;mask-repeat:repeat-x}
+.scallop.to-indigo{background:var(--indigo);-webkit-mask-image:radial-gradient(circle at 13px 0,transparent 12px,#000 13px);mask-image:radial-gradient(circle at 13px 0,transparent 12px,#000 13px);-webkit-mask-size:26px 26px;mask-size:26px 26px;-webkit-mask-repeat:repeat-x;mask-repeat:repeat-x}
+.scallop.to-cream{background:var(--cream);-webkit-mask-image:radial-gradient(circle at 13px 0,transparent 12px,#000 13px);mask-image:radial-gradient(circle at 13px 0,transparent 12px,#000 13px);-webkit-mask-size:26px 26px;mask-size:26px 26px;-webkit-mask-repeat:repeat-x;mask-repeat:repeat-x}
+
+/* buttons */
+.btn{border:0;border-radius:999px;padding:15px 30px;font-weight:700;font-size:15px;line-height:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s;position:relative}
+.btn-primary{background:var(--terracotta);color:var(--white);box-shadow:0 10px 24px -8px rgba(156,66,37,.55)}
+.btn-primary:hover{background:var(--terracotta-dark);transform:translateY(-2px);box-shadow:0 16px 30px -10px rgba(156,66,37,.65)}
+.btn-outline{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--white)}
+.btn-light{background:var(--white);color:var(--terracotta-dark)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.btn-wide{width:100%}
+
+/* header */
+.site-header{height:84px;position:sticky;top:0;z-index:40;background:rgba(251,242,228,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-wrap{max-width:1180px;height:100%;margin:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;white-space:nowrap}
+.brand-mark{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:linear-gradient(155deg,var(--marigold-light),var(--blush));box-shadow:0 0 0 3px var(--parchment),inset 0 0 0 1px rgba(156,66,37,.15)}
+.brand-word{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.nav-links{display:flex;align-items:center;gap:32px;font-size:13.5px;font-weight:600}
+.nav-links a:not(.btn){position:relative;padding:6px 0;color:var(--ink);opacity:.78;transition:opacity .2s}
+.nav-links a:not(.btn):after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--terracotta);transition:right .25s ease}
+.nav-links a:not(.btn):hover,.nav-links a.active{opacity:1}
+.nav-links a:not(.btn):hover:after,.nav-links a.active:after{right:0}
+.nav-shop-cta{display:none}
+.header-actions{display:flex;align-items:center;gap:6px}
+.icon-btn{border:0;background:transparent;color:var(--ink);font-size:19px;padding:10px;position:relative;border-radius:50%;transition:background .2s}
+.icon-btn:hover{background:var(--parchment)}
+.icon-btn svg{display:block}
+.cart-count{position:absolute;right:4px;top:4px;min-width:16px;height:16px;border-radius:50%;background:var(--terracotta);color:white;font-size:10px;font-weight:700;display:none;place-items:center}
+.menu-button{display:none}
+
+/* hero */
+.hero{background:var(--cream);padding:76px 0 120px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:70px}
+.hero-copy{max-width:540px;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:7px 16px 7px 8px;font-size:12px;font-weight:700;color:var(--terracotta-dark);margin-bottom:22px;box-shadow:var(--shadow-soft)}
+.hero-badge span.dot{width:22px;height:22px;border-radius:50%;background:var(--marigold-light);display:grid;place-items:center;font-size:12px}
+.hero h1{margin-bottom:22px}
+.hero h1 em{font-style:italic;color:var(--terracotta)}
+.hero .intro{font-size:18px;color:var(--muted);max-width:460px;margin-bottom:30px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.hero-proof{display:flex;align-items:center;gap:14px}
+.avatar-stack{display:flex}
+.avatar-stack span{width:34px;height:34px;border-radius:50%;border:2.5px solid var(--cream);background:var(--parchment2);display:grid;place-items:center;font-size:14px;margin-left:-10px}
+.avatar-stack span:first-child{margin-left:0}
+.hero-proof strong{display:block;font-family:var(--serif);font-weight:600;font-size:14px;color:var(--ink)}
+.hero-proof small{display:block;color:var(--muted);font-size:12px}
+.hero-art{position:relative;min-height:440px;z-index:2}
+.hero-frame{position:relative;width:100%;max-width:430px}
+.hero-photo{width:100%;height:440px;border-radius:50% 50% 46% 46% / 55% 55% 45% 45%;object-fit:cover;box-shadow:var(--shadow-lift);border:10px solid var(--white)}
+.hero-chip{position:absolute;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:12px 16px;box-shadow:var(--shadow-soft);font-weight:700;font-size:13px;display:flex;align-items:center;gap:10px}
+.hero-chip .chip-icon{width:30px;height:30px;border-radius:50%;background:var(--marigold-light);display:grid;place-items:center;font-size:14px}
+.hero-chip.one{top:6%;left:-8%}
+.hero-chip.two{bottom:10%;right:-10%}
+.hero-chip small{display:block;font-weight:500;color:var(--muted);font-size:11px}
+.hero .mandala{width:230px;height:230px;top:-6%;right:-10%;color:var(--terracotta)}
+.hero:after{content:"";position:absolute;bottom:-2px;left:-5%;right:-5%;height:94px;background:var(--ink);clip-path:polygon(0 100%,100% 38%,100% 100%);z-index:1}
+
+/* trust strip */
+.trust-strip{background:var(--parchment);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:26px 0}
+.trust-item{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:700;color:var(--terracotta-dark)}
+.trust-item .ti-icon{font-size:20px}
+.trust-item small{display:block;font-weight:500;color:var(--muted)}
+
+/* section helpers */
+.section-pad{padding:92px 0}
+.section-sand{background:var(--parchment)}
+.section-cream{background:var(--cream)}
+.center{text-align:center}
+.section-heading{max-width:620px;margin:0 auto 46px}
+.section-heading p{color:var(--muted);font-size:16px}
+
+/* shop */
+.shop-top{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:38px;flex-wrap:wrap}
+.shop-top h2{font-size:clamp(28px,3.2vw,38px)}
+.shop-count{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px;white-space:nowrap}
+.product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+.product-card{position:relative}
+.product-image{aspect-ratio:1/1;background:var(--parchment2);border-radius:22px;overflow:hidden;position:relative;box-shadow:var(--shadow-soft)}
+.product-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.product-card:hover .product-image img{transform:scale(1.06)}
+.product-badge{position:absolute;top:14px;left:14px;background:var(--terracotta);color:#fff;font-size:11px;font-weight:700;padding:6px 13px;border-radius:999px;z-index:2}
+.product-quick{position:absolute;inset:auto 14px 14px 14px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-radius:14px;padding:11px 14px;display:flex;justify-content:space-between;align-items:center;gap:8px;transform:translateY(130%);transition:transform .35s cubic-bezier(.2,.8,.2,1);z-index:2}
+.product-card:hover .product-quick{transform:translateY(0)}
+.product-quick button,.product-quick .qv-trigger{background:transparent;border:1.5px solid var(--ink);color:var(--ink);border-radius:999px;padding:9px 16px;font-size:12px;font-weight:700;flex:1;text-align:center}
+.product-quick button:hover{background:var(--ink);color:#fff}
+.product-meta{padding-top:18px;display:flex;justify-content:space-between;align-items:start}
+.product-name{font-family:var(--serif);font-weight:600;font-size:19px;margin-bottom:4px}
+.product-edition{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--terracotta-dark);margin-bottom:6px}
+.product-desc{font-size:13px;color:var(--muted);max-width:220px}
+.price{font-family:var(--serif);font-size:19px;font-weight:600;white-space:nowrap}
+
+/* values */
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.value-card{border-radius:22px;padding:34px 28px;background:var(--white);border:1px solid var(--line);text-align:left;transition:transform .3s,box-shadow .3s}
+.value-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft)}
+.value-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;font-size:21px}
+.value-card:nth-child(1) .value-icon{background:var(--blush)}
+.value-card:nth-child(2) .value-icon{background:var(--marigold-light)}
+.value-card:nth-child(3) .value-icon{background:#e3e8d8}
+.value-card p{font-size:14px;color:var(--muted)}
+
+/* story preview + stats */
+.story-preview{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
+.story-image-wrap{position:relative}
+.story-image{height:420px;border-radius:26px;overflow:hidden;box-shadow:var(--shadow-lift)}
+.story-image img{width:100%;height:100%;object-fit:cover}
+.story-stat-card{position:absolute;bottom:-26px;right:-22px;background:var(--white);border-radius:18px;padding:18px 22px;box-shadow:var(--shadow-soft);text-align:center}
+.story-stat-card strong{display:block;font-family:var(--serif);font-size:26px;color:var(--terracotta-dark)}
+.story-stat-card span{font-size:11px;color:var(--muted);font-weight:600}
+.story-preview h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:18px}
+.story-preview p{font-size:15px;color:var(--muted);margin-bottom:12px}
+.text-link{font-size:13px;color:var(--terracotta-dark);font-weight:700;display:inline-flex;align-items:center;gap:6px;margin-top:8px}
+.text-link span{transition:transform .2s}
+.text-link:hover span{transform:translateX(4px)}
+
+/* marquee ticker */
+.marquee{background:var(--ink);color:var(--marigold-light);overflow:hidden;padding:18px 0;white-space:nowrap;position:relative;z-index:2}
+.marquee-track{display:inline-flex;animation:marquee 26s linear infinite}
+.marquee-track span{display:inline-flex;align-items:center;gap:36px;padding-right:36px;font-family:var(--serif);font-style:italic;font-size:19px;letter-spacing:.01em;white-space:nowrap}
+.marquee-track span i{font-style:normal;color:var(--terracotta-light);font-size:12px}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* paisley texture */
+.paisley-bg{position:relative}
+.paisley-bg:before{content:"";position:absolute;inset:0;opacity:.065;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='110' viewBox='0 0 90 110'%3E%3Cpath d='M45 8c18 0 30 14 30 32 0 14-9 22-9 34 0 10 8 14 8 24 0 6-8 7-14 16-14 22-38 29-38 46z' fill='none' stroke='%23c4675a' stroke-width='2'/%3E%3C/svg%3E");background-size:90px 110px;background-repeat:repeat}
+.paisley-bg > *{position:relative;z-index:1}
+
+/* character trait chips */
+.trait-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.trait-chip{display:inline-flex;align-items:center;gap:6px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:12px;font-weight:700;color:var(--terracotta-dark)}
+
+/* craft process */
+.craft-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;padding:0 10px;position:relative;counter-reset:step}
+.craft-step{text-align:center;position:relative}
+.craft-line{position:absolute;top:36px;left:12.5%;right:12.5%;height:1px;background:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 16px);z-index:0}
+.craft-icon{width:72px;height:72px;border-radius:50%;background:var(--white);border:1px solid var(--line);display:grid;place-items:center;font-size:27px;margin:0 auto 18px;position:relative;z-index:1;box-shadow:var(--shadow-soft)}
+.craft-icon:after{counter-increment:step;content:counter(step);position:absolute;top:-8px;right:-6px;background:var(--terracotta);color:#fff;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700}
+.craft-step h3{font-size:16px;margin-bottom:6px}
+.craft-step p{font-size:13px;color:var(--muted)}
+
+/* faq accordion */
+.faq-list{max-width:760px;margin:auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:transparent;border:0;display:flex;justify-content:space-between;align-items:center;padding:22px 4px;text-align:left;font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink)}
+.faq-q .plus{font-size:22px;color:var(--terracotta);transition:transform .3s;flex:0 0 auto;margin-left:16px}
+.faq-item.open .faq-q .plus{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a p{font-size:14px;color:var(--muted);padding:0 4px 22px}
+.faq-item.open .faq-a{max-height:260px}
+
+/* gift cta */
+.gift-cta{background:linear-gradient(135deg,var(--terracotta),var(--terracotta-dark));color:#fff;text-align:center;padding:78px 24px}
+.gift-cta h2{color:#fff;font-size:clamp(30px,3.6vw,46px);margin-bottom:14px}
+.gift-cta p{font-size:15px;max-width:500px;margin:0 auto 26px;opacity:.9}
+.gift-cta .mandala{color:#fff}
+
+/* page hero */
+.page-hero{background:var(--parchment);text-align:center;padding:96px 24px 86px;min-height:300px;display:flex;align-items:center;justify-content:center}
+.page-hero .inner{max-width:720px;position:relative;z-index:2}
+.page-hero h1{font-size:clamp(38px,4.4vw,50px);margin-bottom:16px}
+.page-hero p{color:var(--muted);font-size:16px}
+
+/* story timeline */
+.story-columns{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.quote-block{background:var(--white);border-radius:24px;padding:38px 34px;box-shadow:var(--shadow-soft);position:sticky;top:110px}
+.quote{font-family:var(--serif);font-style:italic;font-size:23px;line-height:1.38;color:var(--ink)}
+.quote .mark{font-size:46px;color:var(--terracotta);display:block;line-height:.4;margin-bottom:10px}
+.quote small{display:block;line-height:1.4;margin-top:20px;font:700 12px var(--sans);color:var(--terracotta-dark);text-transform:uppercase;letter-spacing:.08em}
+.timeline{display:flex;flex-direction:column;gap:30px}
+.timeline-item{display:grid;grid-template-columns:44px 1fr;gap:18px}
+.timeline-num{width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--white);display:grid;place-items:center;font-size:16px;font-weight:600}
+.timeline-item h3{margin-bottom:6px}
+.timeline-item p{font-size:14px;color:var(--muted)}
+
+/* mission (dark) */
+.mission{padding:100px 24px;background:var(--indigo);color:var(--white)}
+.mission .mandala{color:var(--marigold)}
+.mission-inner{max-width:720px;margin:auto;position:relative;z-index:2}
+.mission-inner .eyebrow{color:var(--marigold-light)}
+.mission-inner .eyebrow:before{background:var(--marigold-light)}
+.mission h2{color:var(--white);font-size:clamp(30px,3.6vw,44px);margin-bottom:20px}
+.mission p{color:#c9cedd;font-size:16px;margin-bottom:14px}
+
+/* coming soon */
+.coming-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.coming-card{border:1px solid var(--line);border-radius:22px;background:var(--white);padding:34px 26px;text-align:left;position:relative}
+.coming-tag{position:absolute;top:-12px;left:26px;background:var(--marigold);color:var(--ink);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:5px 12px;border-radius:999px}
+.coming-card .icon{width:46px;height:46px;border-radius:13px;background:var(--parchment);display:grid;place-items:center;font-size:21px;margin-bottom:16px}
+.coming-card p{font-size:14px;color:var(--muted)}
+
+/* waitlist */
+.waitlist{background:var(--parchment);padding:0 24px 100px;position:relative}
+.waitlist-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:960px;margin:auto;border-radius:28px;overflow:hidden;box-shadow:var(--shadow-lift)}
+.waitlist-aside{background:var(--indigo);color:#fff;padding:48px 42px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.waitlist-aside .mandala{color:var(--marigold);width:160px;height:160px;bottom:-40px;right:-40px}
+.waitlist-aside h2{color:#fff;font-size:30px;margin-bottom:14px}
+.waitlist-aside p{color:#c9cedd;font-size:14px;margin-bottom:22px}
+.waitlist-perks{list-style:none;margin:0;padding:0}
+.waitlist-perks li{font-size:13px;color:#e8eaf1;margin-bottom:10px;display:flex;gap:10px;align-items:flex-start}
+.waitlist-perks li:before{content:"+";color:var(--marigold)}
+.waitlist-card{background:var(--white);padding:48px 42px}
+.form-field{display:block;margin-bottom:16px;font-size:12px;font-weight:700}
+.form-field input,.form-field select{display:block;width:100%;margin-top:7px;border:1px solid var(--line);border-radius:11px;background:var(--cream);padding:13px 14px;color:var(--ink);outline:none;transition:border-color .2s}
+.form-field input:focus,.form-field select:focus{border-color:var(--terracotta)}
+.form-message{font-size:13px;color:var(--sage);margin:14px 0 0;font-weight:600}
+
+/* footer */
+.site-footer{background:var(--indigo);color:#c9cedd;padding:64px 0 28px;position:relative}
+.site-footer .mandala{color:var(--marigold-light);width:300px;height:300px;top:-80px;left:-80px}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.1fr;gap:40px;position:relative;z-index:2}
+.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.footer-brand .brand-word{color:#fff}
+.footer-grid h4{font-size:12px;letter-spacing:.08em;color:#fff;margin:0 0 16px;text-transform:uppercase}
+.footer-grid p,.footer-grid a{display:block;color:#aab0c4;font-size:13px;margin:0 0 10px}
+.footer-grid a:hover{color:var(--marigold-light)}
+.promise{list-style:none;padding:0;margin:0}
+.promise li{font-size:13px;color:#aab0c4;margin-bottom:10px}
+.promise li:before{content:"+";color:var(--marigold-light);margin-right:8px}
+.footer-bottom{border-top:1px solid #3a4262;margin-top:36px;padding-top:20px;display:flex;justify-content:space-between;gap:15px;font-size:12px;color:#8891ac;position:relative;z-index:2}
+.footer-bottom em{color:var(--marigold-light);font-family:var(--serif);font-style:italic}
+
+/* cart drawer */
+.overlay{position:fixed;inset:0;background:#241c1466;z-index:50;opacity:0;pointer-events:none;transition:opacity .25s;backdrop-filter:blur(2px)}
+.overlay.open{opacity:1;pointer-events:auto}
+.cart-drawer{position:fixed;right:0;top:0;height:100dvh;width:min(420px,100%);background:var(--white);z-index:51;transform:translateX(102%);transition:transform .32s cubic-bezier(.2,.8,.2,1);padding:28px;display:flex;flex-direction:column;box-shadow:-20px 0 50px #0002}
+.cart-drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:20px}
+.drawer-head h3{font-family:var(--serif);font-size:24px}
+.close-cart{border:0;background:transparent;font-size:26px;color:var(--muted)}
+.cart-items{overflow:auto;flex:1;padding:18px 0}
+.cart-row{display:grid;grid-template-columns:66px 1fr auto;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}
+.cart-thumb{width:66px;height:66px;background:var(--parchment);display:grid;place-items:center;font-size:28px;border-radius:12px}
+.cart-row strong{display:block;font-size:13px;font-family:var(--serif);font-weight:600}
+.cart-row small{color:var(--muted)}
+.qty{display:flex;align-items:center;gap:10px;margin-top:8px}
+.qty button{border:1px solid var(--line);background:transparent;border-radius:7px;width:26px;height:26px}
+.remove{border:0;background:transparent;color:var(--muted);font-size:11px;margin-top:5px;text-decoration:underline}
+.cart-empty{text-align:center;margin:auto;padding:12px;display:flex;flex-direction:column;align-items:center;color:var(--muted);font-size:14px}
+.cart-empty .empty-icon{margin-bottom:12px;display:flex;justify-content:center;color:var(--muted)}
+.cart-footer{border-top:1px solid var(--line);padding-top:20px}
+.subtotal{display:flex;justify-content:space-between;font-weight:700;margin-bottom:16px;font-family:var(--serif);font-size:17px}
+.cart-footer p{font-size:11px;color:var(--muted)}
+
+/* toast */
+.toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--ink);color:#fff;border-radius:999px;padding:13px 22px;font-size:13px;z-index:80;transition:.3s;box-shadow:var(--shadow-soft)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* announcement bar */
+.announce-bar{background:var(--ink);color:var(--white);text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:11px 44px;position:relative}
+.announce-bar strong{color:var(--terracotta-light)}
+.announce-close{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:var(--white);opacity:.7;font-size:18px;line-height:1;padding:4px}
+.announce-close:hover{opacity:1}
+.announce-bar.hidden{display:none}
+
+/* modal shared */
+.modal-overlay{position:fixed;inset:0;background:#10140fb3;z-index:60;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(3px)}
+.modal-overlay.open{opacity:1;pointer-events:auto}
+.modal-card{position:fixed;left:50%;top:50%;transform:translate(-50%,-48%) scale(.96);opacity:0;pointer-events:none;z-index:61;background:var(--white);border-radius:26px;box-shadow:var(--shadow-lift);transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .3s}
+.modal-card.open{transform:translate(-50%,-50%) scale(1);opacity:1;pointer-events:auto}
+.modal-close{position:absolute;top:18px;right:18px;background:var(--parchment);border:0;width:34px;height:34px;border-radius:50%;font-size:18px;color:var(--ink);z-index:2}
+
+/* welcome modal */
+.welcome-modal{width:min(440px,90vw);padding:44px 38px;text-align:center}
+.welcome-modal .wm-ribbon{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);background:var(--terracotta);color:#fff;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:7px 18px;border-radius:999px;box-shadow:var(--shadow-soft)}
+.welcome-modal h3{font-size:28px;margin:18px 0 14px}
+.welcome-modal p{font-size:14px;color:var(--muted);margin-bottom:26px}
+
+/* page views (single page product detail) */
+.page-view{display:none}
+#view-home{display:block}
+.product-page{padding:44px 0 100px}
+.back-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--terracotta-dark);margin-bottom:28px;background:transparent;border:0;cursor:pointer;font-family:var(--sans)}
+.back-link:hover{text-decoration:underline}
+.pp-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+.pp-gallery{position:sticky;top:110px}
+.pp-stage{aspect-ratio:1/1;border-radius:24px;overflow:hidden;background:var(--parchment2);box-shadow:var(--shadow-soft);position:relative}
+.pp-stage img,.pp-stage video{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.pp-thumbs{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}
+.pp-thumb{aspect-ratio:1/1;border-radius:10px;overflow:hidden;border:2px solid transparent;cursor:pointer;opacity:.65;transition:opacity .2s,border-color .2s;position:relative;background:var(--parchment2)}
+.pp-thumb img{width:100%;height:100%;object-fit:cover}
+.pp-thumb.active{opacity:1;border-color:var(--terracotta)}
+.pp-thumb .play-badge{position:absolute;inset:0;display:grid;place-items:center;color:#fff;background:#0005;font-size:16px}
+.pp-badge{display:inline-block;background:var(--terracotta);color:#fff;font-size:11px;font-weight:700;padding:6px 14px;border-radius:999px;margin-bottom:16px}
+.pp-info h1{font-size:clamp(30px,3.6vw,42px);margin-bottom:12px}
+.pp-price{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--terracotta-dark);margin-bottom:18px}
+.pp-lead{font-size:15px;color:var(--muted);margin-bottom:24px}
+.pp-qty-row{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.pp-qty-row button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:transparent;font-size:17px}
+.pp-qty-row span{font-family:var(--serif);font-size:18px;font-weight:600;min-width:22px;text-align:center}
+.pp-actions{display:flex;gap:12px;margin-bottom:30px;flex-wrap:wrap}
+.pp-actions .btn{flex:1;min-width:160px}
+.pp-trust{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.pp-trust span{display:inline-flex;align-items:center;gap:6px;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:12px;font-weight:700;color:var(--terracotta-dark)}
+.pp-tabs{border-top:1px solid var(--line);padding-top:6px}
+.pp-tab-buttons{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:22px;flex-wrap:wrap}
+.pp-tab-btn{background:transparent;border:0;padding:16px 4px;margin-right:22px;font-size:14px;font-weight:700;color:var(--muted);border-bottom:2px solid transparent;position:relative;top:1px}
+.pp-tab-btn.active{color:var(--ink);border-color:var(--terracotta)}
+.pp-tab-panel{display:none;font-size:14px;color:var(--muted);line-height:1.75}
+.pp-tab-panel.active{display:block}
+.pp-tab-panel h4{font-family:var(--serif);font-size:16px;color:var(--ink);margin:0 0 10px}
+.pp-tab-panel ul{margin:0 0 14px;padding-left:18px}
+.pp-tab-panel li{margin-bottom:6px}
+.song-row{display:flex;align-items:center;gap:14px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.song-row .song-icon{width:34px;height:34px;border-radius:50%;background:var(--marigold-light);display:grid;place-items:center;font-size:15px;flex:0 0 auto}
+.song-row strong{display:block;font-size:13px;color:var(--ink)}
+.song-row small{color:var(--muted);font-size:12px}
+.song-note{font-size:12px;color:var(--muted);font-style:italic;margin-top:8px}
+
+@media (max-width:900px){
+.hero-grid,.story-preview,.story-columns,.waitlist-grid{grid-template-columns:1fr}
+.values-grid,.coming-grid,.trust-grid{grid-template-columns:1fr 1fr}
+.footer-grid{grid-template-columns:1fr 1fr}
+.pp-grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+.site-header{height:70px}.nav-wrap{padding:0 18px}.brand-word{font-size:21px}.brand-mark{width:36px;height:36px;font-size:19px}
+.menu-button{display:block;border:0;background:transparent;font-size:22px}
+.nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--cream);padding:18px 24px 24px;flex-direction:column;align-items:stretch;gap:0;border-bottom:1px solid var(--line)}
+.nav-links.open{display:flex}.nav-links a:not(.btn){padding:13px 0;border-bottom:1px solid #e4cda780}.nav-links .btn{margin-top:14px}
+.nav-shop-cta{display:inline-flex}
+.header-actions .btn{display:none}
+.hero{padding:48px 0 40px}.hero-copy{max-width:100%}.hero .intro{font-size:16px}.hero-art{min-height:300px}.hero-photo{height:320px}
+.hero-chip{display:none}
+.container{width:min(100% - 36px,1180px)}.section-pad{padding:64px 0}
+.product-grid,.values-grid,.coming-grid,.trust-grid{grid-template-columns:1fr}
+.craft-steps{grid-template-columns:1fr;gap:34px}
+.craft-line{display:none}
+.marquee-track span{font-size:15px;gap:24px;padding-right:24px}
+.story-image,.quote-block{position:static}
+.page-hero{padding:68px 20px;min-height:220px}
+.waitlist-aside,.waitlist-card{padding:34px 26px}
+.footer-grid{grid-template-columns:1fr}
+.announce-bar{font-size:11.5px;padding:10px 40px}
+.pp-gallery{position:static}
+.pp-thumbs{grid-template-columns:repeat(5,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="announce-bar" id="announceBar"><strong>✦ Founding Collection</strong> - now live. Limited quantities available. <button class="announce-close" id="announceClose" aria-label="Dismiss announcement">×</button></div>
+
+<header class="site-header">
+<div class="nav-wrap">
+<a class="brand" href="#home" aria-label="WunderCubs home">
+<span class="brand-mark" aria-hidden="true">🧸</span>
+<span class="brand-word">WunderCubs</span>
+</a>
+<nav class="nav-links" id="navLinks" aria-label="Main navigation">
+<a href="#home" data-nav="home">Home</a>
+<a href="#shop" data-nav="shop">Shop</a>
+<a href="#story" data-nav="story">Our Story</a>
+<a href="#coming" data-nav="coming">Coming Soon</a>
+<a href="#contact" data-nav="contact">Contact</a>
+<a class="btn btn-primary nav-shop-cta" href="#shop">Shop Now</a>
+</nav>
+<div class="header-actions">
+<a class="btn btn-primary" href="#shop">Shop Now</a>
+<button class="icon-btn" id="openCart" aria-label="Open shopping cart"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1.2 13.5a1 1 0 0 1-1 .9H8.2a1 1 0 0 1-1-.9L6 7z"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7"/></svg><span class="cart-count" id="cartCount">0</span></button>
+<button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">☰</button>
+</div>
+</div>
+</header>
+
+<main>
+<div class="page-view" id="view-home">
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div class="hero-copy reveal">
+<span class="hero-badge"><span class="dot">✦</span> Screen-free play, every single day</span>
+<h1>Little hands.<br>Big <em>wonders.</em></h1>
+<p class="intro">Screen-free, culturally rooted plush toys that spark curiosity, nurture values, and carry India's living stories into every bedtime and playtime.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#shop">Shop the collection</a>
+<a class="btn btn-outline" href="#story">Read our story</a>
+</div>
+<div class="hero-proof">
+<div class="avatar-stack" aria-hidden="true"><span>🐘</span><span>🐒</span><span>🧸</span></div>
+<div><strong>Founding Collection</strong><small>Designed to teach, not just entertain</small></div>
+</div>
+</div>
+<div class="hero-art reveal">
+<span class="mandala spin-slow" aria-hidden="true"></span>
+<div class="hero-frame">
+<img class="hero-photo" src="https://placehold.co/560x560/eac4ba/9c4a3f?text=Toddler+at+Play" alt="Toddler enjoying playtime with a WunderCubs plush toy">
+<div class="hero-chip one float"><span class="chip-icon">❂</span><span>Rooted in culture<small>Stories from India</small></span></div>
+<div class="hero-chip two float-delay"><span class="chip-icon">✦</span><span>0 screens<small>100% tactile play</small></span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="marquee" aria-hidden="true">
+<div class="marquee-track">
+<span>Screen-Free Play <i>✦</i> Rooted in Indian Culture <i>✦</i> A Story Behind Every Toy <i>✦</i> Safe for Ages 0-7 <i>✦</i> Made to Be Loved <i>✦</i></span>
+<span>Screen-Free Play <i>✦</i> Rooted in Indian Culture <i>✦</i> A Story Behind Every Toy <i>✦</i> Safe for Ages 0-7 <i>✦</i> Made to Be Loved <i>✦</i></span>
+</div>
+</section>
+
+<section class="trust-strip">
+<div class="container trust-grid">
+<div class="trust-item"><span class="ti-icon">✦</span><div>Screen-Free<small>Always has been</small></div></div>
+<div class="trust-item"><span class="ti-icon">📖</span><div>Learn &amp; Play<small>A lesson in every toy</small></div></div>
+<div class="trust-item"><span class="ti-icon">🌿</span><div>Safe Materials<small>Ages 0-7 tested</small></div></div>
+<div class="trust-item"><span class="ti-icon">📦</span><div>Free Shipping<small>On orders above ₹999</small></div></div>
+</div>
+</section>
+
+<section class="section-pad section-sand" id="shop">
+<div class="container">
+<div class="shop-top reveal">
+<div>
+<p class="eyebrow">Our launch collection</p>
+<h2>Meet your child's<br>new best friends</h2>
+<div class="trait-row">
+<span class="trait-chip">✦ Wisdom</span>
+<span class="trait-chip">✦ Courage</span>
+<span class="trait-chip">✦ Curiosity</span>
+<span class="trait-chip">✦ Belonging</span>
+</div>
+</div>
+<span class="shop-count">Showing <span id="productCount">2</span> of 2 products</span>
+</div>
+<div class="product-grid reveal-stagger" id="productGrid">
+<article class="product-card" data-product="ganesh">
+<div class="product-image">
+<span class="product-badge">Founding Collection</span>
+<img src="https://placehold.co/500x500/e8d6c0/9c4a3f?text=Ganesha+Plush" alt="WunderCubs Ganesha plush toy">
+<div class="product-quick"><button class="qv-trigger" data-view="ganesh">View details</button><button data-add="ganesh">Add to cart</button></div>
+</div>
+<div class="product-meta">
+<div>
+<div class="product-name">Ganesh Plush Toy</div>
+<p class="product-desc">The remover of obstacles, reimagined as a huggable companion for quiet moments.</p>
+</div>
+<div class="price">₹949</div>
+</div>
+</article>
+<article class="product-card" data-product="hanuman">
+<div class="product-image">
+<span class="product-badge">New Arrival</span>
+<img src="https://placehold.co/500x500/e8d6c0/9c4a3f?text=Hanuman+Plush" alt="WunderCubs Hanuman plush toy">
+<div class="product-quick"><button class="qv-trigger" data-view="hanuman">View details</button><button data-add="hanuman">Add to cart</button></div>
+</div>
+<div class="product-meta">
+<div>
+<div class="product-name">Hanuman Plush Toy</div>
+<p class="product-desc">Courage and loyalty, stitched into a soft companion for brave little hearts.</p>
+</div>
+<div class="price">₹949</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section-pad section-cream" id="values">
+<div class="container">
+<div class="section-heading center reveal">
+<p class="eyebrow" style="justify-content:center">Why WunderCubs</p>
+<h2>Play that means something</h2>
+<p>Every WunderCubs toy is designed around three promises we never compromise on.</p>
+</div>
+<div class="values-grid reveal-stagger">
+<article class="value-card"><div class="value-icon">✦</div><h3>100% Screen-Free</h3><p>Every toy is designed to keep little hands busy and little minds engaged - no screens, no apps, just pure tactile wonder.</p></article>
+<article class="value-card"><div class="value-icon">❂</div><h3>Rooted in Culture</h3><p>Our toys carry the warmth of Indian stories, values, and traditions - giving children a sense of identity from their very first play.</p></article>
+<article class="value-card"><div class="value-icon">✿</div><h3>Designed for Little Hands</h3><p>Soft, safe, and thoughtfully sized for ages 0-7, supporting sensory exploration and moments of togetherness.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section-pad section-sand">
+<div class="container story-preview">
+<div class="story-image-wrap reveal">
+<div class="story-image"><img src="https://placehold.co/640x760/e8d6c0/73685d?text=A+Family+Story" alt="Toddler enjoying playtime with a WunderCubs toy"></div>
+<div class="story-stat-card"><strong>2026</strong><span>Founded with heart</span></div>
+</div>
+<div class="reveal">
+<p class="eyebrow">Our story</p>
+<h2>Every child deserves to grow up with toys that tell them who they are.</h2>
+<p>WunderCubs was born from a simple belief - that the best toys don't need batteries or screens. They need heart. Rooted in the rich storytelling traditions of India, we create tactile companions that nurture curiosity, celebrate culture, and bring families closer together.</p>
+<a class="text-link" href="#story">Read our full story <span>→</span></a>
+</div>
+</div>
+</section>
+
+<section class="section-pad section-sand paisley-bg">
+<div class="container">
+<div class="section-heading center reveal">
+<p class="eyebrow" style="justify-content:center">Why it matters</p>
+<h2>A lesson in every hug</h2>
+<p>Every WunderCubs companion carries more than softness - it's designed around a story and a value your child can grow with.</p>
+</div>
+<div class="craft-steps reveal-stagger">
+<span class="craft-line" aria-hidden="true"></span>
+<div class="craft-step"><div class="craft-icon">🐘</div><h3>Ganesha teaches wisdom</h3><p>A gentle lesson in patience and the courage to begin again after a setback.</p></div>
+<div class="craft-step"><div class="craft-icon">🐒</div><h3>Hanuman teaches courage</h3><p>A story of loyalty, bravery, and devotion a child can carry into daily life.</p></div>
+<div class="craft-step"><div class="craft-icon">✋</div><h3>Hands-on focus</h3><p>Screen-free, tactile play that builds attention, calm, and sensory awareness.</p></div>
+<div class="craft-step"><div class="craft-icon">🏡</div><h3>A sense of belonging</h3><p>Characters rooted in stories passed down through generations, close to home.</p></div>
+</div>
+</div>
+</section>
+
+<section class="gift-cta reveal">
+<span class="mandala spin-slow" style="width:200px;height:200px;top:-60px;left:-60px"></span>
+<span class="mandala spin-slow" style="width:260px;height:260px;bottom:-90px;right:-70px;animation-direction:reverse"></span>
+<h2>Give the gift of wonder</h2>
+<p>Thoughtfully designed toys that parents trust and children love. Free shipping on orders above ₹999.</p>
+<a class="btn btn-light" href="#shop">Shop the collection</a>
+</section>
+
+<section class="page-hero" id="story">
+<span class="mandala spin-slow" style="width:240px;height:240px;top:-70px;left:4%;color:var(--terracotta)"></span>
+<span class="mandala spin-slow" style="width:180px;height:180px;bottom:-60px;right:6%;color:var(--sage);animation-direction:reverse"></span>
+<div class="inner reveal">
+<p class="eyebrow" style="justify-content:center">Our story</p>
+<h1>Born from bedtime stories and a grandmother's lap</h1>
+<p>WunderCubs began with a simple question: why do our children's toys have nothing to do with the world they come from?</p>
+</div>
+</section>
+
+<section class="section-pad section-cream">
+<div class="container story-columns">
+<div class="quote-block reveal">
+<span class="mark">"</span>
+<p class="quote">My daughter reached for her grandmother's phone instead of the plush toy sitting right next to it. That was the moment I knew something had to change.</p>
+<small>- Sravani, Founder</small>
+</div>
+<div class="timeline reveal-stagger">
+<div class="timeline-item"><div class="timeline-num">1</div><div><h3>The moment</h3><p>WunderCubs was founded in 2026 by a parent who noticed her toddler gravitating toward screens over stories - and decided the alternative needed to be irresistible, not just "allowed."</p></div></div>
+<div class="timeline-item"><div class="timeline-num">2</div><div><h3>The mission</h3><p>We set out to fill a gap on the shelf: toys that carry India's living traditions, so children form their sense of identity through play, not just entertainment.</p></div></div>
+<div class="timeline-item"><div class="timeline-num">3</div><div><h3>The making</h3><p>Working with child-development experts and cultural storytellers, we design plush companions that invite a child to imagine, feel, and connect with something real.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="mission">
+<span class="mandala spin-slow" style="width:320px;height:320px;top:-100px;right:-100px"></span>
+<span class="mandala spin-slow" style="width:220px;height:220px;bottom:-80px;left:-60px;animation-direction:reverse"></span>
+<div class="mission-inner reveal">
+<p class="eyebrow">Our mission</p>
+<h2>Filling childhood with stories worth holding onto</h2>
+<p>We believe the earliest years of a child's life are sacred. The stories they hear, the textures they touch, and the characters they love shape who they become.</p>
+<p>WunderCubs exists to fill those years with toys rooted in India's living traditions - Ganesha's wisdom, Hanuman's courage, the warmth of a dadi's voice - brought to life in soft, screen-free companions that little hands can hold.</p>
+</div>
+</section>
+
+<section class="page-hero" id="coming">
+<span class="mandala spin-slow" style="width:220px;height:220px;top:-60px;right:6%;color:var(--marigold)"></span>
+<div class="inner reveal">
+<p class="eyebrow" style="justify-content:center"><span style="background:var(--terracotta);color:#fff;border-radius:20px;padding:6px 15px;letter-spacing:.06em">Coming soon - Phase 2</span></p>
+<h1 style="margin-top:22px">Something wonderful is in the works</h1>
+<p>Interactive mechanical toys and board games - screen-free play that moves, clicks, and surprises little hands.</p>
+</div>
+</section>
+
+<section class="section-pad section-cream">
+<div class="container">
+<div class="section-heading center reveal"><h2 style="font-size:clamp(28px,3.2vw,38px)">What's coming</h2></div>
+<div class="coming-grid reveal-stagger">
+<article class="coming-card"><span class="coming-tag">Phase 2</span><div class="icon">⚙️</div><h3>Interactive mechanical toys</h3><p>Gears, levers, and playful puzzles that teach cause-and-effect through pure tactile delight - no batteries, no screens.</p></article>
+<article class="coming-card"><span class="coming-tag">Phase 2</span><div class="icon">🎲</div><h3>Cultural board games</h3><p>Family games rooted in Indian traditions - strategy, storytelling, and laughter for children and parents together.</p></article>
+<article class="coming-card"><span class="coming-tag">Phase 2</span><div class="icon">✨</div><h3>Expanded mythology series</h3><p>New characters from India's living stories, each with their own sounds, textures, and tales to tell.</p></article>
+</div>
+</div>
+</section>
+
+<section class="section-pad section-cream">
+<div class="container">
+<div class="section-heading center reveal">
+<p class="eyebrow" style="justify-content:center">Good to know</p>
+<h2>Frequently asked questions</h2>
+</div>
+<div class="faq-list reveal">
+<div class="faq-item">
+<button class="faq-q">Are WunderCubs toys safe for infants?<span class="plus">+</span></button>
+<div class="faq-a"><p>Yes - every toy uses child-safe, non-toxic materials and is designed for ages 0-7, with reinforced stitching tested for durability.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q">How long does shipping take?<span class="plus">+</span></button>
+<div class="faq-a"><p>Orders typically ship within 2-4 business days, with free shipping on orders above ₹999 across India.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Can I wash the plush toys?<span class="plus">+</span></button>
+<div class="faq-a"><p>Yes, each toy is gentle-cycle machine washable. We recommend air-drying to preserve embroidery detail.</p></div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Do you ship internationally?<span class="plus">+</span></button>
+<div class="faq-a"><p>We're currently shipping within India only, with international shipping planned as part of our Phase 2 rollout.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="waitlist" id="contact">
+<div class="section-heading center reveal" style="padding-top:70px">
+<h2 style="font-size:clamp(28px,3.2vw,38px)">Be the first to know</h2>
+<p>Join the waitlist and get early access, behind-the-scenes updates, and a special launch offer.</p>
+</div>
+<div class="waitlist-grid reveal">
+<div class="waitlist-aside">
+<span class="mandala spin-slow"></span>
+<h2>What you'll get</h2>
+<p>A front-row seat to every new story we bring to life.</p>
+<ul class="waitlist-perks">
+<li>Early access before public launch</li>
+<li>Behind-the-scenes look at how WunderCubs comes to life</li>
+<li>A special offer for founding families</li>
+</ul>
+</div>
+<form class="waitlist-card" id="waitlistForm">
+<label class="form-field">Name<input name="name" type="text" placeholder="Your name" required></label>
+<label class="form-field">Email<input name="email" type="email" placeholder="Your email address" required></label>
+<label class="form-field">What excites you most?
+<select name="interest" required>
+<option value="">Select an option...</option>
+<option>Audio plush toys</option>
+<option>Cultural board games</option>
+<option>Interactive mechanical toys</option>
+<option>All of the above</option>
+</select>
+</label>
+<button class="btn btn-primary btn-wide" type="submit">Join the waitlist</button>
+<p class="form-message" id="formMessage" hidden>✓ Thank you! This demo has recorded your submission in this browser only. Connect an email/CRM service to collect sign-ups.</p>
+</form>
+</div>
+</section>
+</div>
+
+<div class="page-view" id="view-ganesh">
+<section class="product-page">
+<div class="container">
+<button class="back-link" data-view="home">← Back to shop</button>
+<div class="pp-grid">
+<div class="pp-gallery" data-product="ganesh">
+<div class="pp-stage">
+<img class="pp-stage-img" src="images/ganesh1.jpg" alt="Ganesh Plush Toy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27600%27 height=%27600%27%3E%3Crect width=%27100%25%27 height=%27100%25%27 fill=%27%23e8d6c0%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 font-family=%27sans-serif%27 font-size=%2726%27 fill=%27%239c4a3f%27 text-anchor=%27middle%27 dy=%27.3em%27%3EAdd Photo%3C/text%3E%3C/svg%3E'">
+<video class="pp-stage-video" style="display:none" controls playsinline></video>
+</div>
+<div class="pp-thumbs"></div>
+</div>
+<div class="pp-info">
+<span class="pp-badge">Founding Collection</span>
+<h1>Ganesh Plush Toy</h1>
+<div class="pp-price">₹949</div>
+<p class="pp-lead">The remover of obstacles, reimagined as a soft, screen-free companion. Ganesha's gentle expression and huggable textures invite calm, imaginative play - carrying a quiet lesson in patience and the courage to begin again.</p>
+<div class="pp-qty-row" data-product="ganesh">
+<button class="pp-qty-minus" aria-label="Decrease quantity">-</button>
+<span class="pp-qty-value">1</span>
+<button class="pp-qty-plus" aria-label="Increase quantity">+</button>
+</div>
+<div class="pp-actions">
+<button class="btn btn-primary pp-add-btn" data-product="ganesh">Add to cart</button>
+<button class="btn btn-outline" data-view="home">Continue browsing</button>
+</div>
+<div class="pp-trust">
+<span>✦ Ages 0-7</span>
+<span>✦ Soft-knit fabric</span>
+<span>✦ Machine washable</span>
+</div>
+<div class="pp-tabs">
+<div class="pp-tab-buttons">
+<button class="pp-tab-btn active" data-tab="about">About this toy</button>
+<button class="pp-tab-btn" data-tab="sounds">Sounds &amp; Songs</button>
+<button class="pp-tab-btn" data-tab="care">Care &amp; Safety</button>
+</div>
+<div class="pp-tab-panel active" data-panel="about">
+<h4>Why children love Ganesha</h4>
+<p>This huggable companion carries the calm, wise energy of Ganesha - a gentle reminder that every obstacle can be the start of something new.</p>
+<ul>
+<li>Soft-knit, huggable plush sized for little arms</li>
+<li>Embroidered Om mark and hand-finished detailing</li>
+<li>Designed to accompany bedtime stories and quiet play</li>
+<li>Part of the Founding Collection - our first launch toys</li>
+</ul>
+</div>
+<div class="pp-tab-panel" data-panel="sounds">
+<h4>What this toy plays</h4>
+<div class="song-row"><div class="song-icon">♫</div><div><strong>Track 1 - [Add song title]</strong><small>[Add duration, e.g. 0:30]</small></div></div>
+<div class="song-row"><div class="song-icon">♫</div><div><strong>Track 2 - [Add song title]</strong><small>[Add duration]</small></div></div>
+<div class="song-row"><div class="song-icon">♫</div><div><strong>Track 3 - [Add song title]</strong><small>[Add duration]</small></div></div>
+<p class="song-note">✎ This is a placeholder layout - replace with the real song or chant titles, durations, and a short description of what's included in this toy's sound feature.</p>
+</div>
+<div class="pp-tab-panel" data-panel="care">
+<h4>Care instructions</h4>
+<ul>
+<li>Gentle-cycle machine washable; air-dry to preserve embroidery</li>
+<li>Spot clean for best results on embroidered details</li>
+<li>Recommended for ages 0-7 under normal adult supervision</li>
+</ul>
+<h4>Safety</h4>
+<p>Made with child-safe, non-toxic materials and reinforced stitching, inspected before packing.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<div class="page-view" id="view-hanuman">
+<section class="product-page">
+<div class="container">
+<button class="back-link" data-view="home">← Back to shop</button>
+<div class="pp-grid">
+<div class="pp-gallery" data-product="hanuman">
+<div class="pp-stage">
+<img class="pp-stage-img" src="images/hanuman1.jpg" alt="Hanuman Plush Toy" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27600%27 height=%27600%27%3E%3Crect width=%27100%25%27 height=%27100%25%27 fill=%27%23e8d6c0%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 font-family=%27sans-serif%27 font-size=%2726%27 fill=%27%239c4a3f%27 text-anchor=%27middle%27 dy=%27.3em%27%3EAdd Photo%3C/text%3E%3C/svg%3E'">
+<video class="pp-stage-video" style="display:none" controls playsinline></video>
+</div>
+<div class="pp-thumbs"></div>
+</div>
+<div class="pp-info">
+<span class="pp-badge">New Arrival</span>
+<h1>Hanuman Plush Toy</h1>
+<div class="pp-price">₹949</div>
+<p class="pp-lead">Courage and loyalty, stitched into a soft companion for brave little hearts. Hanuman's devoted spirit brings a gentle lesson in bravery and staying true to those we love.</p>
+<div class="pp-qty-row" data-product="hanuman">
+<button class="pp-qty-minus" aria-label="Decrease quantity">-</button>
+<span class="pp-qty-value">1</span>
+<button class="pp-qty-plus" aria-label="Increase quantity">+</button>
+</div>
+<div class="pp-actions">
+<button class="btn btn-primary pp-add-btn" data-product="hanuman">Add to cart</button>
+<button class="btn btn-outline" data-view="home">Continue browsing</button>
+</div>
+<div class="pp-trust">
+<span>✦ Ages 0-7</span>
+<span>✦ Soft-knit fabric</span>
+<span>✦ Machine washable</span>
+</div>
+<div class="pp-tabs">
+<div class="pp-tab-buttons">
+<button class="pp-tab-btn active" data-tab="about">About this toy</button>
+<button class="pp-tab-btn" data-tab="sounds">Sounds &amp; Songs</button>
+<button class="pp-tab-btn" data-tab="care">Care &amp; Safety</button>
+</div>
+<div class="pp-tab-panel active" data-panel="about">
+<h4>Why children love Hanuman</h4>
+<p>This soft companion carries Hanuman's spirit of courage and devotion - a gentle reminder that bravery and loyalty go hand in hand.</p>
+<ul>
+<li>Soft-knit, huggable plush sized for little arms</li>
+<li>Embroidered tilak mark and hand-finished detailing</li>
+<li>Designed to accompany bedtime stories about courage</li>
+<li>Part of our New Arrivals - just launched</li>
+</ul>
+</div>
+<div class="pp-tab-panel" data-panel="sounds">
+<h4>What this toy plays</h4>
+<div class="song-row"><div class="song-icon">♫</div><div><strong>Track 1 - [Add song title]</strong><small>[Add duration, e.g. 0:30]</small></div></div>
+<div class="song-row"><div class="song-icon">♫</div><div><strong>Track 2 - [Add song title]</strong><small>[Add duration]</small></div></div>
+<div class="song-row"><div class="song-icon">♫</div><div><strong>Track 3 - [Add song title]</strong><small>[Add duration]</small></div></div>
+<p class="song-note">✎ This is a placeholder layout - replace with the real song or chant titles, durations, and a short description of what's included in this toy's sound feature.</p>
+</div>
+<div class="pp-tab-panel" data-panel="care">
+<h4>Care instructions</h4>
+<ul>
+<li>Gentle-cycle machine washable; air-dry to preserve embroidery</li>
+<li>Spot clean for best results on embroidered details</li>
+<li>Recommended for ages 0-7 under normal adult supervision</li>
+</ul>
+<h4>Safety</h4>
+<p>Made with child-safe, non-toxic materials and reinforced stitching, inspected before packing.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<footer class="site-footer">
+<span class="mandala spin-slow"></span>
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-brand"><span class="brand-mark" aria-hidden="true">🧸</span><span class="brand-word">WunderCubs</span></div>
+<p>Little Hands, Big Wonders.</p>
+<p>Screen-free, culturally rooted toys for curious little minds.</p>
+</div>
+<div><h4>Explore</h4><a href="#shop">Shop</a><a href="#story">Our Story</a><a href="#coming">Coming Soon</a><a href="#contact">Contact</a></div>
+<div><h4>Our promise</h4><ul class="promise"><li>100% Screen-Free Play</li><li>Rooted in Indian Values</li><li>Safe for Ages 0-7</li><li>Designed with Purpose</li></ul></div>
+<div><h4>Stay in touch</h4><p>Join the waitlist for early access and launch offers.</p><a class="btn btn-primary" href="#contact" style="margin-top:4px">Join waitlist</a></div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> WunderCubs. All rights reserved.</span>
+<em>Little Hands, Big Wonders</em>
+</div>
+</div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+<div class="drawer-head"><h3>Your cart</h3><button class="close-cart" id="closeCart" aria-label="Close cart">×</button></div>
+<div class="cart-items" id="cartItems"></div>
+<div class="cart-footer" id="cartFooter" hidden>
+<div class="subtotal"><span>Subtotal</span><span id="subtotal">₹0.00</span></div>
+<p>Shipping and taxes calculated at checkout. Demo only; no payment is collected.</p>
+<button class="btn btn-primary btn-wide" id="checkoutButton">Continue to checkout</button>
+</div>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<div class="modal-overlay" id="welcomeOverlay"></div>
+<div class="modal-card welcome-modal" id="welcomeModal" role="dialog" aria-modal="true" aria-hidden="true">
+<span class="wm-ribbon">✦ You're early</span>
+<button class="modal-close" id="welcomeClose" aria-label="Close">×</button>
+<h3>Welcome to the<br>Founding Collection</h3>
+<p>WunderCubs just launched. Every piece in this first run is thoughtfully designed in limited quantities - thank you for being here from the start.</p>
+<a href="#shop" class="btn btn-primary btn-wide" id="welcomeCta">Explore the collection</a>
+</div>
+
+<script>
+const products={
+ganesh:{id:'ganesh',name:'Ganesh Plush Toy',price:949,emoji:'🐘'},
+hanuman:{id:'hanuman',name:'Hanuman Plush Toy',price:949,emoji:'🐒'}
+};
+let cart=JSON.parse(localStorage.getItem('wc_cart')||'{}');
+let qtyState={ganesh:1,hanuman:1};
+const productMedia={
+ganesh:[
+{type:'image',src:'images/ganesh1.jpg'},
+{type:'image',src:'images/ganesh2.jpg'},
+{type:'image',src:'images/ganesh3.jpg'},
+{type:'image',src:'images/ganesh4.jpg'},
+{type:'image',src:'images/ganesh5.jpg'},
+{type:'image',src:'images/ganesh6.jpg'},
+{type:'video',src:'images/ganesh-video.mp4',poster:'images/ganesh1.jpg'}
+],
+hanuman:[
+{type:'image',src:'images/hanuman1.jpg'},
+{type:'image',src:'images/hanuman2.jpg'},
+{type:'image',src:'images/hanuman3.jpg'},
+{type:'image',src:'images/hanuman4.jpg'},
+{type:'image',src:'images/hanuman5.jpg'},
+{type:'image',src:'images/hanuman6.jpg'},
+{type:'video',src:'images/hanuman-video.mp4',poster:'images/hanuman1.jpg'}
+]
+};
+const FALLBACK="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23e8d6c0'/%3E%3Ctext x='50%25' y='50%25' font-family='sans-serif' font-size='26' fill='%239c4a3f' text-anchor='middle' dy='.3em'%3EAdd Photo%3C/text%3E%3C/svg%3E";
+function setStage(gallery,item){
+const img=gallery.querySelector('.pp-stage-img');const vid=gallery.querySelector('.pp-stage-video');
+if(item.type==='video'){
+img.style.display='none';vid.style.display='block';
+vid.src=item.src;if(item.poster)vid.poster=item.poster;vid.load();
+}else{
+vid.pause();vid.style.display='none';img.style.display='block';
+img.src=item.src;
+}
+}
+function buildGallery(gallery){
+const pid=gallery.dataset.product;const media=productMedia[pid];
+const thumbs=gallery.querySelector('.pp-thumbs');
+thumbs.innerHTML=media.map((m,i)=>{
+const src=m.type==='video'?(m.poster||''):m.src;
+const play=m.type==='video'?'<span class="play-badge">▶</span>':'';
+return `<div class="pp-thumb${i===0?' active':''}" data-idx="${i}"><img src="${src}" alt="" onerror="this.onerror=null;this.src='${FALLBACK}'">${play}</div>`;
+}).join('');
+setStage(gallery,media[0]);
+}
+function showView(view){
+document.querySelectorAll('.page-view').forEach(v=>v.style.display='none');
+const target=document.getElementById('view-'+view);
+if(target)target.style.display='block';
+window.scrollTo({top:0,behavior:'auto'});
+}
+document.querySelectorAll('.pp-gallery').forEach(buildGallery);
+const $=s=>document.querySelector(s);
+const money=n=>'₹'+n.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
+function showToast(message){
+const t=$('#toast');t.textContent=message;t.classList.add('show');
+clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>t.classList.remove('show'),2500);
+}
+function addToCart(id){cart[id]=(cart[id]||0)+1;renderCart();showToast(products[id].name+' added to cart')}
+function changeQty(id,delta){cart[id]=(cart[id]||0)+delta;if(cart[id]<=0)delete cart[id];renderCart()}
+function renderCart(){
+localStorage.setItem('wc_cart',JSON.stringify(cart));
+const entries=Object.entries(cart);const count=entries.reduce((s,[,q])=>s+q,0);
+$('#cartCount').textContent=count;$('#cartCount').style.display=count?'grid':'none';
+const items=$('#cartItems');const footer=$('#cartFooter');
+if(!entries.length){
+items.innerHTML='<div class="cart-empty"><div class="empty-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.2 13.5a1 1 0 0 1-1 .9H8.2a1 1 0 0 1-1-.9L6 7z"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7"/></svg></div><strong>Your cart is empty.</strong><br>Add something you love and it will show up here.<br><a class="btn btn-outline" href="#shop" style="margin-top:16px" id="browseProducts">Browse products</a></div>';
+footer.hidden=true;return;
+}
+items.innerHTML=entries.map(([id,q])=>{const p=products[id];return `<div class="cart-row"><div class="cart-thumb">${p.emoji}</div><div><strong>${p.name}</strong><small>${money(p.price)}</small><div class="qty"><button aria-label="Decrease quantity" data-minus="${id}">-</button><span>${q}</span><button aria-label="Increase quantity" data-plus="${id}">+</button></div></div><div><strong>${money(p.price*q)}</strong><button class="remove" data-remove="${id}">Remove</button></div></div>`}).join('');
+footer.hidden=false;$('#subtotal').textContent=money(entries.reduce((s,[id,q])=>s+products[id].price*q,0));
+}
+function openCart(){$('#overlay').classList.add('open');$('#cartDrawer').classList.add('open');$('#cartDrawer').setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+function closeCart(){$('#overlay').classList.remove('open');$('#cartDrawer').classList.remove('open');$('#cartDrawer').setAttribute('aria-hidden','true');document.body.style.overflow=''}
+
+document.addEventListener('click',e=>{
+const add=e.target.closest('[data-add]');if(add)addToCart(add.dataset.add);
+const plus=e.target.closest('[data-plus]');if(plus)changeQty(plus.dataset.plus,1);
+const minus=e.target.closest('[data-minus]');if(minus)changeQty(minus.dataset.minus,-1);
+const remove=e.target.closest('[data-remove]');if(remove){delete cart[remove.dataset.remove];renderCart()}
+if(e.target.closest('#browseProducts'))closeCart();
+
+const homeLink=e.target.closest('a[href^="#"]');
+if(homeLink)showView('home');
+const viewBtn=e.target.closest('[data-view]');
+if(viewBtn)showView(viewBtn.dataset.view);
+
+const thumb=e.target.closest('.pp-thumb');
+if(thumb){
+const gallery=thumb.closest('.pp-gallery');
+const pid=gallery.dataset.product;
+gallery.querySelectorAll('.pp-thumb').forEach(t=>t.classList.remove('active'));
+thumb.classList.add('active');
+setStage(gallery,productMedia[pid][Number(thumb.dataset.idx)]);
+}
+const tabBtn=e.target.closest('.pp-tab-btn');
+if(tabBtn){
+const tabs=tabBtn.closest('.pp-tabs');
+tabs.querySelectorAll('.pp-tab-btn').forEach(b=>b.classList.remove('active'));
+tabs.querySelectorAll('.pp-tab-panel').forEach(p=>p.classList.remove('active'));
+tabBtn.classList.add('active');
+tabs.querySelector(`.pp-tab-panel[data-panel="${tabBtn.dataset.tab}"]`).classList.add('active');
+}
+const qMinus=e.target.closest('.pp-qty-minus');
+if(qMinus){
+const row=qMinus.closest('.pp-qty-row');const pid=row.dataset.product;
+if(qtyState[pid]>1){qtyState[pid]--;row.querySelector('.pp-qty-value').textContent=qtyState[pid];}
+}
+const qPlus=e.target.closest('.pp-qty-plus');
+if(qPlus){
+const row=qPlus.closest('.pp-qty-row');const pid=row.dataset.product;
+qtyState[pid]++;row.querySelector('.pp-qty-value').textContent=qtyState[pid];
+}
+const ppAdd=e.target.closest('.pp-add-btn');
+if(ppAdd){
+const pid=ppAdd.dataset.product;const q=qtyState[pid]||1;
+cart[pid]=(cart[pid]||0)+q;renderCart();
+showToast(products[pid].name+' added to cart');
+}
+});
+$('#openCart').addEventListener('click',openCart);
+$('#closeCart').addEventListener('click',closeCart);
+$('#overlay').addEventListener('click',closeCart);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeCart();closeWelcome()}});
+$('#checkoutButton').addEventListener('click',()=>showToast('Checkout is not connected yet. Add a commerce/payment provider before launch.'));
+
+$('#menuButton').addEventListener('click',()=>{
+const open=$('#navLinks').classList.toggle('open');
+$('#menuButton').setAttribute('aria-expanded',String(open));
+$('#menuButton').textContent=open?'×':'☰';
+});
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>{
+$('#navLinks').classList.remove('open');$('#menuButton').setAttribute('aria-expanded','false');$('#menuButton').textContent='☰';
+}));
+
+$('#waitlistForm').addEventListener('submit',e=>{
+e.preventDefault();$('#formMessage').hidden=false;
+e.target.querySelector('button[type="submit"]').textContent='Thank you!';
+e.target.reset();
+});
+
+$('#year').textContent=new Date().getFullYear();
+renderCart();
+if(new URLSearchParams(location.search).get('openCart')==='1'){openCart();}
+
+/* welcome modal */
+function openWelcome(){
+$('#welcomeOverlay').classList.add('open');$('#welcomeModal').classList.add('open');$('#welcomeModal').setAttribute('aria-hidden','false');
+document.body.style.overflow='hidden';
+}
+function closeWelcome(){
+$('#welcomeOverlay').classList.remove('open');$('#welcomeModal').classList.remove('open');$('#welcomeModal').setAttribute('aria-hidden','true');
+document.body.style.overflow='';
+}
+$('#welcomeClose').addEventListener('click',closeWelcome);
+$('#welcomeOverlay').addEventListener('click',closeWelcome);
+$('#welcomeCta').addEventListener('click',closeWelcome);
+if(!sessionStorage.getItem('wc_welcome_shown')){
+setTimeout(()=>{openWelcome();sessionStorage.setItem('wc_welcome_shown','1')},1700);
+}
+
+/* announcement bar */
+const announceClose=$('#announceClose');
+if(announceClose)announceClose.addEventListener('click',()=>{$('#announceBar').classList.add('hidden')});
+
+/* scroll reveal */
+const revealEls=document.querySelectorAll('.reveal, .reveal-stagger');
+const io=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('in-view');io.unobserve(entry.target)}
+});
+},{threshold:0.15});
+revealEls.forEach(el=>io.observe(el));
+
+/* scrollspy nav */
+const sections=['home','shop','story','coming','contact'].map(id=>document.getElementById(id)).filter(Boolean);
+const navLinksMap={};
+document.querySelectorAll('[data-nav]').forEach(a=>navLinksMap[a.dataset.nav]=a);
+const spy=new IntersectionObserver((entries)=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+Object.values(navLinksMap).forEach(a=>a.classList.remove('active'));
+if(navLinksMap[entry.target.id])navLinksMap[entry.target.id].classList.add('active');
+}
+});
+},{rootMargin:'-40% 0px -55% 0px'});
+sections.forEach(s=>spy.observe(s));
+
+/* faq accordion */
+document.querySelectorAll('.faq-item').forEach(item=>{
+item.querySelector('.faq-q').addEventListener('click',()=>{
+const isOpen=item.classList.contains('open');
+document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+if(!isOpen)item.classList.add('open');
+});
+});
+</script>
+</body>
+</html>
